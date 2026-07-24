@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: searched
+source: https://callab.ai/
+notes: >-
+  Compliance posture as published on the Callab AI homepage security/compliance section. SOC 2 Type
+  II and HIPAA readiness are stated as in progress (not yet certified); GDPR/CCPA compliance is
+  claimed as achieved. No public trust center or certification registry was found. No public OpenAPI
+  is available, so cross-cutting API standards (OAuth2/OIDC/RFC 9457/pagination/idempotency) could
+  not be derived and are recorded as unknown.
+standards:
+  - id: gdpr
+    conforms: true
+    evidence: homepage states "GDPR/CCPA compliant"
+  - id: ccpa
+    conforms: true
+    evidence: homepage states "GDPR/CCPA compliant"
+  - id: soc2-type-ii
+    conforms: false
+    status: in-progress
+    evidence: homepage states "SOC 2 Type II (in progress)"
+  - id: hipaa
+    conforms: false
+    status: in-progress
+    evidence: homepage states "HIPAA-ready (in progress)"
+  - id: oauth2
+    conforms: unknown
+    evidence: no public OpenAPI or auth docs (API reference gated)
+  - id: rfc9457-problem-details
+    conforms: unknown
+    evidence: no public OpenAPI to inspect error responses

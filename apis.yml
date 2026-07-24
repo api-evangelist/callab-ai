@@ -1,22 +1,121 @@
 aid: callab-ai
-name: Callab Ai
-description: Callab Ai is a company surfaced as a portfolio company of y-combinator and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+name: Callab AI
 url: https://raw.githubusercontent.com/api-evangelist/callab-ai/refs/heads/main/apis.yml
+kind: company
+description: >-
+  Callab AI, built by Clusterlabs, is a cloud-based voice AI platform that connects directly to
+  legacy on-premises PBX/SBC telephony (Cisco UCM, Mitel, FreeSWITCH) via SIP trunk integration,
+  routing calls to AI voice agents with no rip-and-replace migration. The platform automates up to
+  70% of inbound and outbound call volume across support, sales, and scheduling, with no-code agent
+  building, live human supervision and takeover, semantic knowledge bases, post-call transcription
+  and sentiment analysis, CRM data extraction, and batch outbound campaigns. Callab AI exposes a
+  REST API at docs.callab.ai for programmatic control of agents and calls. A Y Combinator Spring
+  2026 company founded in 2024, it serves hospitality, logistics, retail, and property management
+  across three continents.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://framerusercontent.com/images/FI3habKVoti5uJ32Q7ktHORE8U.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
-- y-combinator
+  - y-combinator
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-legal-entity: Clusterlabs
+x-yc-batch: Spring 2026
+x-founders:
+  - Haithem Kchaou
+  - Chehir Dhaouadi
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
-- Company
-apis: []
+  - Voice AI
+  - Conversational AI
+  - Telephony
+  - Contact Center
+  - SIP
+  - Voice Agents
+  - Call Automation
+  - PBX
+  - Customer Support
+  - AI Agents
+apis:
+  - aid: callab-ai:api
+    name: Callab AI API
+    description: >-
+      Callab AI's REST API, documented at docs.callab.ai/api-reference, is organized around REST
+      principles with predictable resource-oriented URLs, standard HTTP verbs, and standard HTTP
+      response codes for programmatic control of voice agents and calls. The public API reference is
+      currently gated behind an access code; the API is served from api.callab.ai. No public OpenAPI
+      specification is published as of this enrichment pass.
+    image: https://framerusercontent.com/images/FI3habKVoti5uJ32Q7ktHORE8U.png
+    humanURL: https://docs.callab.ai/api-reference/introduction
+    baseURL: https://api.callab.ai
+    tags:
+      - Voice AI
+      - Telephony
+      - Voice Agents
+      - Call Automation
+      - REST
+    properties:
+      - type: Documentation
+        url: https://docs.callab.ai/api-reference/introduction
+      - type: APIReference
+        url: https://docs.callab.ai/api-reference/introduction
+common:
+  - type: Website
+    url: https://callab.ai
+  - type: DeveloperPortal
+    url: https://docs.callab.ai
+  - type: Documentation
+    url: https://docs.callab.ai/api-reference/introduction
+  - type: APIReference
+    url: https://docs.callab.ai/api-reference/introduction
+  - type: Blog
+    url: https://callab.ai/blog
+  - type: TermsOfService
+    url: https://callab.ai/terms-of-service/non-eaa
+  - type: SignUp
+    url: https://app.callab.ai
+  - type: Login
+    url: https://app.callab.ai
+  - type: Support
+    url: https://callab.ai/book-meeting
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/callabai
+  - type: Twitter
+    url: https://x.com/callab_ai
+  - type: Conformance
+    url: conformance/callab-ai-conformance.yml
+  - type: Compliance
+    url: https://callab.ai
+  - type: DomainSecurity
+    url: security/callab-ai-domain-security.yml
+  - type: WellKnown
+    url: well-known/callab-ai-well-known.yml
+  - type: MCPServer
+    url: https://docs.callab.ai/mcp
+    name: Callab AI Docs MCP Server
+    description: Hosted, OAuth-protected docs-search MCP server (scope mcp:search).
+  - type: LLMsTxt
+    url: llms/callab-ai-llms.txt
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-- FN: APIs.json
-  email: info@apis.io
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+  - FN: APIs.json
+    email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,58 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of /.well-known/ across callab.ai, api.callab.ai, docs.callab.ai
+notes: >-
+  Only the docs host (docs.callab.ai, a Mintlify-hosted docs site) exposes real well-known
+  documents, tied to its hosted MCP server OAuth. callab.ai and api.callab.ai return 404 for all
+  probed paths. Paths that returned the docs SPA HTML shell (HTTP 200 but 40317-byte app shell,
+  not a real document) are recorded as not-a-document.
+hosts:
+  - host: https://docs.callab.ai
+    documents:
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        content_type: application/json
+        file: callab-ai-oauth-authorization-server.json
+      - path: /.well-known/oauth-authorization-server/mcp
+        status: 200
+        content_type: application/json
+        note: identical RFC 8414 metadata for the MCP OAuth server
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        content_type: application/json
+        file: callab-ai-oauth-protected-resource.json
+      - path: /.well-known/security.txt
+        status: 200
+        note: returns docs SPA HTML shell, not a real RFC 9116 security.txt
+      - path: /.well-known/openid-configuration
+        status: 200
+        note: returns docs SPA HTML shell, not a real OIDC discovery document
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        note: returns docs SPA HTML shell, not a real plugin manifest
+      - path: /.well-known/api-catalog
+        status: 404
+  - host: https://callab.ai
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://api.callab.ai
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404

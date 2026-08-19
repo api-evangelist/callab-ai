@@ -2,13 +2,12 @@ generated: '2026-07-18'
 method: searched
 status: published
 source: https://docs.callab.ai/.well-known/oauth-protected-resource
-notes: >-
-  Callab AI's documentation host exposes a hosted, remote MCP server at https://docs.callab.ai/mcp
-  (Mintlify-provided docs MCP). It is OAuth-protected: an unauthenticated POST returns HTTP 401
-  invalid_token. Discovery documents advertise the authorization server https://docs.callab.ai/mcp/oauth
-  (RFC 8414 / RFC 9728). The single advertised scope is mcp:search, i.e. this server exposes the
-  Callab AI documentation for search/retrieval by MCP clients. This is a docs-search MCP surface, not
-  a full control-plane MCP over the Callab AI voice API.
+notes: 'Callab AI''s documentation host exposes a hosted, remote MCP server at https://docs.callab.ai/mcp
+  (Mintlify-provided docs MCP). It is OAuth-protected: an unauthenticated POST returns HTTP 401 invalid_token.
+  Discovery documents advertise the authorization server https://docs.callab.ai/mcp/oauth (RFC 8414 /
+  RFC 9728). The single advertised scope is mcp:search, i.e. this server exposes the Callab AI documentation
+  for search/retrieval by MCP clients. This is a docs-search MCP surface, not a full control-plane MCP
+  over the Callab AI voice API.'
 server:
   name: callab-ai-docs
   transport: http
@@ -19,12 +18,22 @@ server:
     authorization_endpoint: https://docs.callab.ai/mcp/oauth/authorize
     token_endpoint: https://docs.callab.ai/mcp/oauth/token
     registration_endpoint: https://docs.callab.ai/mcp/oauth/register
-    grant_types_supported: [authorization_code, client_credentials, refresh_token]
-    code_challenge_methods_supported: [S256]
-    scopes_supported: [mcp:search]
+    grant_types_supported:
+    - authorization_code
+    - client_credentials
+    - refresh_token
+    code_challenge_methods_supported:
+    - S256
+    scopes_supported:
+    - mcp:search
 tools:
-  - name: search
-    description: >-
-      Search the Callab AI documentation (scope mcp:search). Exact tool name/schema requires an
-      authenticated MCP session (initialize returns 401 without a token); recorded from the advertised
-      scope, not enumerated verbatim.
+- name: search
+  description: Search the Callab AI documentation (scope mcp:search). Exact tool name/schema requires
+    an authenticated MCP session (initialize returns 401 without a token); recorded from the advertised
+    scope, not enumerated verbatim.
+deployment:
+  mode: remote
+  verified: searched
+  tools: 1
+  checked: '2026-08-12'
+  source: catalog MCP census

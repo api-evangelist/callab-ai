@@ -12,6 +12,17 @@ description: >-
   REST API at docs.callab.ai for programmatic control of agents and calls. A Y Combinator Spring
   2026 company founded in 2024, it serves hospitality, logistics, retail, and property management
   across three continents.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown

@@ -62,7 +62,7 @@ tags:
   - Voice Agents
   - Call Automation
   - PBX
-  - Customer-Support
+  - Customer Support
   - AI Agents
 tags_raw:
   - Voice AI
@@ -75,6 +75,7 @@ tags_raw:
   - PBX
   - Customer Support
   - AI Agents
+  - Customer-Support
 apis:
   - aid: callab-ai:api
     name: Callab AI API
